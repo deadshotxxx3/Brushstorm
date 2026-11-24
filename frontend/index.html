@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <title>Brushstorm</title>
+    </head>
+    <body>
+        <header>
+            <h1>Brushstorm</h1>
+            <p>Рисуй и угадывай с друзьями</p>
+        </header>
+        <main>
+            <section id="join-screen">
+                <h2>Вход</h2>
+                <form id="create-form">
+                    <div>
+                        <label for="nickname">Твой ник</label>
+                        <input
+                            id="nickname" name="nickname" type="text"
+                            placeholder="storm"
+                            maxlength="20"
+                            required
+                        >
+                    </div>
+                    <button type="submit">Создать комнату</button>
+                </form>
+                <form id="join-form">
+                    <div>
+                        <label for="code">Код комнаты</label>
+                        <input
+                            id="code" name="code" type="text"
+                            minlength="5" maxlength="5"
+                            placeholder="K7XQP"
+                            required
+                        >
+                    </div>
+                    <button type="submit">Войти</button>
+                </form>
+                <p id="join-error"></p>
+            </section>
+            <section id="lobby-screen">
+                <h2>Комната</h2>
+                <p>
+                    Код комнаты: <span id="room-code">K7XQP</span>
+                </p>
+                <button id="copy-code-button" type="button">Скопировать код</button>
+                <p>
+                    <span id="player-count">3</span> / 8 игроков
+                </p>
+                <ol id="player-list">
+                    <li>Vasya <span class="host-badge">👑 хост</span></li>
+                    <li>Petya</li>
+                    <li>Masha</li>
+                </ol>
+                <button id="start-game-button" type="button">Начать игру</button>
+                <button id="leave-room-button" type="button">Выйти</button>
+            </section>
+        </main>
+        <footer>
+            <a target="_blank" rel="noopener noreferrer" href="https://github.com/deadshotxxx3/Brushstorm">Brushstorm на GitHub</a>
+        </footer>
+    </body>
+</html>
