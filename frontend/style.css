@@ -1,0 +1,262 @@
+:root {
+    --color-bg: #f4f5fa;
+    --color-surface: #ffffff;
+    --color-text: #1b1b3a;
+    --color-text-muted: #5a5a78;
+    --color-accent: #d63a2f;
+    --color-accent-hover: #b92f25;
+    --color-border: #d6d7e3;
+    --color-row: #f4f5fa;
+    --color-error: #c62828;
+
+    --font-display: "Unbounded", system-ui, sans-serif;
+    --font-body: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+    --radius: 12px;
+    --radius-small: 8px;
+    --shadow: 0 4px 24px rgb(27 27 58 / 0.08);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px 16px;
+    gap: 24px;
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+h1,
+h2,
+p {
+    margin: 0;
+}
+
+h1,
+h2 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 2.25rem;
+    letter-spacing: -0.02em;
+}
+
+h2 {
+    font-size: 1.25rem;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.logo {
+    display: block;
+    flex-shrink: 0;
+}
+
+.tagline {
+    color: var(--color-text-muted);
+}
+
+.main {
+    flex-grow: 1;
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 24px;
+    background: var(--color-surface);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+}
+
+input {
+    min-height: 44px;
+    padding: 0 14px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-small);
+    background: var(--color-surface);
+    color: var(--color-text);
+    font: inherit;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgb(255 90 78 / 0.2);
+}
+
+.code-input {
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+}
+
+.btn {
+    min-height: 44px;
+    padding: 0 20px;
+    border: 1px solid var(--color-text);
+    border-radius: var(--radius-small);
+    background: var(--color-surface);
+    color: var(--color-text);
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s, transform 0.1s;
+}
+
+.btn:hover {
+    background: var(--color-row);
+}
+
+.btn:active {
+    transform: translateY(1px);
+}
+
+.btn:focus-visible {
+    outline: 3px solid rgb(255 90 78 / 0.4);
+    outline-offset: 2px;
+}
+
+.btn-primary {
+    border-color: var(--color-accent);
+    background: var(--color-accent);
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    border-color: var(--color-accent-hover);
+    background: var(--color-accent-hover);
+}
+
+.btn-small {
+    min-height: 36px;
+    padding: 0 12px;
+    font-size: 0.875rem;
+}
+
+.error {
+    color: var(--color-error);
+    font-size: 0.875rem;
+}
+
+.error:empty {
+    display: none;
+}
+
+.room-code-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.room-code-line {
+    color: var(--color-text-muted);
+}
+
+.room-code {
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    color: var(--color-text);
+}
+
+.player-count {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+}
+
+.player-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.player {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 14px;
+    border-radius: var(--radius-small);
+    background: var(--color-row);
+    font-weight: 600;
+}
+
+.host-badge {
+    margin-left: auto;
+    padding: 2px 10px;
+    border-radius: 999px;
+    background: rgb(255 90 78 / 0.12);
+    color: #b3261e;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.actions .btn {
+    flex-grow: 1;
+}
+
+.footer {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+}
+
+.footer a {
+    color: var(--color-text-muted);
+}
+
+.footer a:hover {
+    color: var(--color-accent);
+}

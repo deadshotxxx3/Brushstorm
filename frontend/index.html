@@ -4,19 +4,26 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;800&display=swap">
+        <link rel="icon" href="favicon.svg" type="image/svg+xml">
         <link rel="stylesheet" href="style.css">
         <title>Brushstorm</title>
     </head>
     <body>
-        <header>
-            <h1>Brushstorm</h1>
-            <p>Рисуй и угадывай с друзьями</p>
+        <header class="header">
+            <img class="logo" src="logo.svg" alt="" width="66" height="60">
+            <div class="brand">
+                <h1>Brushstorm</h1>
+                <p class="tagline">Рисуй и угадывай с друзьями</p>
+            </div>
         </header>
-        <main>
-            <section id="join-screen">
+        <main class="main">
+            <section id="join-screen" class="card">
                 <h2>Вход</h2>
-                <form id="create-form">
-                    <div>
+                <form id="create-form" class="form">
+                    <div class="field">
                         <label for="nickname">Твой ник</label>
                         <input
                             id="nickname" name="nickname" type="text"
@@ -25,41 +32,45 @@
                             required
                         >
                     </div>
-                    <button type="submit">Создать комнату</button>
+                    <button class="btn btn-primary" type="submit">Создать комнату</button>
                 </form>
-                <form id="join-form">
-                    <div>
+                <form id="join-form" class="form">
+                    <div class="field">
                         <label for="code">Код комнаты</label>
                         <input
-                            id="code" name="code" type="text"
+                            id="code" class="code-input" name="code" type="text"
                             minlength="5" maxlength="5"
                             placeholder="K7XQP"
                             required
                         >
                     </div>
-                    <button type="submit">Войти</button>
+                    <button class="btn" type="submit">Войти</button>
                 </form>
-                <p id="join-error"></p>
+                <p id="join-error" class="error"></p>
             </section>
-            <section id="lobby-screen">
+            <section id="lobby-screen" class="card">
                 <h2>Комната</h2>
-                <p>
-                    Код комнаты: <span id="room-code">K7XQP</span>
-                </p>
-                <button id="copy-code-button" type="button">Скопировать код</button>
-                <p>
+                <div class="room-code-row">
+                    <p class="room-code-line">
+                        Код: <span id="room-code" class="room-code">K7XQP</span>
+                    </p>
+                    <button id="copy-code-button" class="btn btn-small" type="button">Скопировать</button>
+                </div>
+                <p class="player-count">
                     <span id="player-count">3</span> / 8 игроков
                 </p>
-                <ol id="player-list">
-                    <li>Vasya <span class="host-badge">👑 хост</span></li>
-                    <li>Petya</li>
-                    <li>Masha</li>
+                <ol id="player-list" class="player-list">
+                    <li class="player">Vasya <span class="host-badge">👑 хост</span></li>
+                    <li class="player">Petya</li>
+                    <li class="player">Masha</li>
                 </ol>
-                <button id="start-game-button" type="button">Начать игру</button>
-                <button id="leave-room-button" type="button">Выйти</button>
+                <div class="actions">
+                    <button id="start-game-button" class="btn btn-primary" type="button">Начать игру</button>
+                    <button id="leave-room-button" class="btn" type="button">Выйти</button>
+                </div>
             </section>
         </main>
-        <footer>
+        <footer class="footer">
             <a target="_blank" rel="noopener noreferrer" href="https://github.com/deadshotxxx3/Brushstorm">Brushstorm на GitHub</a>
         </footer>
     </body>
